@@ -1,0 +1,116 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #dedede;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+header,
+main,
+footer {
+  width: 95%;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin: 20px 0;
+}
+
+p {
+  text-align: center;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin: 0 0 15px 0;
+}
+
+a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+figure {
+  margin: 0;
+  border: 2px solid #b8b8b8;
+  background-color: #ffffff;
+  padding: 10px;
+  text-align: center;
+}
+
+img {
+  width: 100%;
+  display: block;
+  height: auto;
+}
+
+figure img {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+figcaption {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+footer {
+  text-align: center;
+  padding: 20px 0;
+}
+
+/* Vista tablet */
+@media screen and (min-width: 772px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  figure {
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  .grid figure:last-child {
+    grid-column: 1 / span 2;
+  }
+}
+
+/* Vista pantallas grandes */
+@media screen and (min-width: 992px) {
+  figure {
+    border-radius: 0;
+  }
+
+  .grid figure:nth-child(3n) {
+    grid-column: 1 / span 2;
+  }
+}
+
+/* Preferencia de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Modo oscuro */
+@media (prefers-color-scheme: dark) {
+  figure {
+    background-color: #1f1f1f;
+    color: #f5e88b;
+    border-color: #000000;
+  }
+
+  a {
+    color: #000000;
+  }
+}
